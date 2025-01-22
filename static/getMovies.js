@@ -1,9 +1,20 @@
+const apiBase = "https://plankton-app-xhkom.ondigitalocean.app/api";
+
+
 export async function getMovies(){
-    const response = await fetch("https://plankton-app-xhkom.ondigitalocean.app/api/movies");
+    const response = await fetch(apiBase + "/movies");
     const payload = await response.json();
-    return payload.data
+    const movies = payload.data.map(toMovieObject);
+    console.log(movies);
+    return movies;
 }
 
 export async function getMovie(id){
+}
 
+function toMovieObject(apiObject){
+    return {
+        id: apiObject.id,
+        ...apiObject.attributes,
+    }
 }
