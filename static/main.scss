@@ -11,7 +11,9 @@ $textColor: #ffffff;
    font-family: "Roboto", serif;
    color: $textColor;
 }
-
+body{
+   background-color: $backgroundColor;
+}
 header {
   background-color: $backgroundColor;
   padding: 1rem;
@@ -91,15 +93,15 @@ header {
    border-radius: 20%;
 }
 
-.movieModalWrapper {
+/*.movieModalWrapper {
 
-  position: fixed;
+  //position: fixed;
   background-color: $backgroundColor;
   top: 0px;
   width: 100%;
   height: 100%;
   overflow: auto; 
- }
+ }*/
 
 .allMoviesBtn {
   position: absolute;
@@ -149,61 +151,43 @@ header {
 
    margin-bottom: 5rem;
 
-   .movieTrailer {
+   .movieImg {
       width: 60%;
       flex-shrink: 0;
       height: 100%;
    }
 
-   .movieImg {
+   .movieInfoBox {
       width: calc(40% - 2rem);
       height: 100%;
       flex-shrink: 0;
       object-fit: cover;
+
+      .rightColumn {
+         width: calc(60% - 2rem);
+   
+         .rightTitle {
+            font-size: 2.5rem;
+            padding: 2rem 0;
+         }
+   
+         .descriptionContainer {
+            p {
+               font-size: 1.25rem;
+   
+               line-height: 1.5;
+            }
+         }
+      }
    }
 }
 
-.movieInfoBox {
+/*.movieInfoBox {
    grid-row-start: 2;
    display: flex;
    gap: 2rem;
    height: 520px;
 
-   .leftColumn {
-      width: 40%;
-      flex-shrink: 0;
-
-      .modalBtn {
-         display: block;
-         margin: 2rem 0;
-      }
-
-      .extraInfo {
-         border: 1px solid rgba(181, 204, 245, 0.1);
-         padding: 45px 40px;
-
-         .leftHeader {
-            font-size: 1.5rem;
-
-            padding-bottom: 1rem;
-         }
-
-         .listHeader {
-            font-size: 1rem;
-            padding: 0.2rem 0;
-            color: #d3dae2;
-
-            opacity: 0.5;
-         }
-
-         .listInfo {
-            font-size: 1.2rem;
-            padding: 0.5rem;
-
-            margin-bottom: 2rem;
-         }
-      }
-   }
 
    .rightColumn {
       width: calc(60% - 2rem);
@@ -221,7 +205,7 @@ header {
          }
       }
    }
-}
+}*/
 
 //-------------Top 3-----------------
 .topTitle {
@@ -488,6 +472,7 @@ footer {
 
 .movieBtn {
    max-width: fit-content;
+   text-decoration: none;
    place-self: end;
    padding: 10px;
    margin: 10px;
