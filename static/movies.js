@@ -64,7 +64,7 @@ const movieCard = {
 
     createMovieCardsFromArray(array, appendMovieCardTo) {
         array.forEach(element => {
-            this.createMovieCard(element.id, element.image, element.title, appendMovieCardTo);
+            this.createMovieCard(element.id, element.image.url, element.title, appendMovieCardTo);
         });
     },
 
@@ -145,19 +145,14 @@ const movieCard = {
         const mediaWrapper = document.createElement('div');
         mediaWrapper.classList.add('mediaWrapper');
 
-        //trailer
-        const movieTrailer = document.createElement('iframe');
-        movieTrailer.classList.add('movieTrailer');
-        movieTrailer.src = infoArray[0].trailer;
-
         //img
         const movieImg = document.createElement('img');
         movieImg.classList.add('movieImg');
-        movieImg.src = infoArray[0].image;
+        movieImg.src = infoArray[0].image.url;
         movieImg.alt = "";
 
         // append to mediaWrapper
-        mediaWrapper.append(movieTrailer);
+       // mediaWrapper.append(movieTrailer);
         mediaWrapper.append(movieImg);
 
         // container info
@@ -185,54 +180,6 @@ const movieCard = {
         movieBtn.append(movieSpan);
         movieBtn.append(movieIcon);
 
-        // Create extra details info
-        const extraInfo = document.createElement('article');
-        extraInfo.classList.add('extraInfo', 'visible');
-
-        //extra info header
-        const headerInfo = document.createElement('h2');
-        headerInfo.classList.add('leftHeader');
-        headerInfo.innerHTML = "Detaljer";
-
-        // extra info content
-        const infoList = document.createElement('dl');
-
-        // Release
-        const releaseHeader = document.createElement('dt');
-        releaseHeader.classList.add('listHeader');
-        releaseHeader.innerHTML = 'Premiär:';
-
-        const releaseDesc = document.createElement('dd');
-        releaseDesc.classList.add('listInfo');
-        releaseDesc.innerHTML = infoArray[0].releaseYear;
-
-        // Runtime
-        const runtimeHeader = document.createElement('dt');
-        runtimeHeader.classList.add('listHeader');
-        runtimeHeader.innerHTML = 'Speltid:';
-
-        const runDesc = document.createElement('dd');
-        runDesc.classList.add('listInfo');
-        runDesc.innerHTML = this.minutesToHoursConverter(infoArray[0].runtime);
-
-        // Director
-        const directorHeader = document.createElement('dt');
-        directorHeader.classList.add('listHeader');
-        directorHeader.innerHTML = 'Regi';
-
-        const directorDesc = document.createElement('dd');
-        directorDesc.classList.add('listInfo');
-        directorDesc.innerHTML = infoArray[0].director;
-
-        // Actors
-        const actorHeader = document.createElement('dt');
-        actorHeader.classList.add('listHeader');
-        actorHeader.innerHTML = 'Skådespelare:';
-
-        const actorDesc = document.createElement('dd');
-        actorDesc.classList.add('listInfo');
-        actorDesc.innerHTML = infoArray[0].actors;
-
         //Title
         const titleHeader = document.createElement('dt');
         titleHeader.classList.add('listHeader');
@@ -240,62 +187,9 @@ const movieCard = {
 
         const titleDesc = document.createElement('dd');
         titleDesc.classList.add('listInfo');
-        titleDesc.innerHTML = infoArray[0].title;
-
-        //Genre
-        const genreHeader = document.createElement('dt');
-        genreHeader.classList.add('listHeader');
-        genreHeader.innerHTML = 'Genre:';
-
-        const genreDesc = document.createElement('dd');
-        genreDesc.classList.add('listInfo');
-        genreDesc.innerHTML = infoArray[0].genre;
-
-        // Append toggle content to extraInfo
-        const toggleContent = document.createElement('div');
-        toggleContent.classList.add('toggleContent');
-
-        toggleContent.append(actorHeader, actorDesc, titleHeader, titleDesc, genreHeader, genreDesc);
-
-        // Append show more/less button
-        const toggleButton = document.createElement('button');
-        toggleButton.classList.add('toggleButton');
-        toggleButton.innerHTML = 'Show more';
-
-        toggleButton.addEventListener('click', () => {
-            if (toggleContent.style.display === 'none' || toggleContent.style.display === '') {
-                toggleContent.style.display = 'block';
-                toggleButton.innerHTML = 'Show less';
-            } else {
-                toggleContent.style.display = 'none';
-                toggleButton.innerHTML = 'Show more';
-            }
-        });
-
-        // Hide toggle content by default
-        toggleContent.style.display = 'none';
-
-        // append to info content
-        infoList.append(releaseHeader);
-        infoList.append(releaseDesc);
-
-        //Runtime append
-        infoList.append(runtimeHeader);
-        infoList.append(runDesc);
-
-        //Director append
-        infoList.append(directorHeader);
-        infoList.append(directorDesc);
-
-        // append to extraInfo
-        extraInfo.append(headerInfo);
-        extraInfo.append(infoList);
-        extraInfo.append(toggleContent);
-        extraInfo.append(toggleButton);
-
-        // append to left column info
+        titleDesc.innerHTML = infoArray[0].title;    
         leftInfo.append(movieBtn);
-        leftInfo.append(extraInfo);
+      
 
         //right info container
         const rightInfo = document.createElement('article');
@@ -311,7 +205,7 @@ const movieCard = {
         descDiv.classList.add('descriptionContainer');
 
         const rightPara = document.createElement('p');
-        rightPara.innerHTML = infoArray[0].description;
+        rightPara.innerHTML = infoArray[0].intro;
 
         descDiv.append(rightPara);
 
@@ -331,21 +225,6 @@ const movieCard = {
         const movieModal = document.querySelector('section.movieModalWrapper');
         movieModal.append(movieContent);
     },
-    /**
-     * Funciton to convert minute into hours and minutes.
-     * @param {*} minuteStr Takes argument in the format of (xxx min)
-     * @returns {*} String in the form of "hours timme minutes minuter".
-     */
-    minutesToHoursConverter(minuteStr) {
-        // Extract minutes from string
-        const minutes = parseInt(minuteStr.split(' ')[0], 10);
-
-        // convert minutes to hours and minutes
-        const hours = Math.floor(minutes / 60);
-        const min = minutes % 60;
-
-        return `${hours} timme ${min} minuter`;
-    }
 };
 
 export { movieCard };
