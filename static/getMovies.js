@@ -10,6 +10,9 @@ export async function getMovies(){
 }
 
 export async function getMovie(id){
+    const response = await fetch(apiBase + "/movies" + id);
+    const payload = await response.json();
+    return toMovieObject(payload.data);
 }
 
 function toMovieObject(apiObject){
