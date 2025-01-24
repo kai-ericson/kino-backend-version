@@ -1,6 +1,5 @@
 const apiBase = "https://plankton-app-xhkom.ondigitalocean.app/api";
 
-
 export async function getMovies(){
     const response = await fetch(apiBase + "/movies");
     const payload = await response.json();
