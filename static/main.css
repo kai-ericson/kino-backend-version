@@ -61,6 +61,12 @@ header .searchBar .searchBtn {
   cursor: pointer;
 }
 
+.picUnderNav {
+  width: 100%;
+  object-fit: cover;
+  align-self: center;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -81,15 +87,15 @@ header .searchBar .searchBtn {
   border-radius: 20%;
 }
 
-.movieModalWrapper {
-  position: fixed;
-  background-color: #0e0e1b;
+/*.movieModalWrapper {
+
+  //position: fixed;
+  background-color: $backgroundColor;
   top: 0px;
   width: 100%;
   height: 100%;
-  overflow: auto;
-}
-
+  overflow: auto; 
+ }*/
 .allMoviesBtn {
   position: absolute;
   left: 70%;
@@ -132,63 +138,53 @@ header .searchBar .searchBtn {
   gap: 2rem;
   margin-bottom: 5rem;
 }
-.mediaWrapper .movieTrailer {
+.mediaWrapper .movieImg {
   width: 60%;
   flex-shrink: 0;
   height: 100%;
 }
-.mediaWrapper .movieImg {
+.mediaWrapper .movieInfoBox {
   width: calc(40% - 2rem);
   height: 100%;
   flex-shrink: 0;
   object-fit: cover;
 }
-
-.movieInfoBox {
-  grid-row-start: 2;
-  display: flex;
-  gap: 2rem;
-  height: 520px;
-}
-.movieInfoBox .leftColumn {
-  width: 40%;
-  flex-shrink: 0;
-}
-.movieInfoBox .leftColumn .modalBtn {
-  display: block;
-  margin: 2rem 0;
-}
-.movieInfoBox .leftColumn .extraInfo {
-  border: 1px solid rgba(181, 204, 245, 0.1);
-  padding: 45px 40px;
-}
-.movieInfoBox .leftColumn .extraInfo .leftHeader {
-  font-size: 1.5rem;
-  padding-bottom: 1rem;
-}
-.movieInfoBox .leftColumn .extraInfo .listHeader {
-  font-size: 1rem;
-  padding: 0.2rem 0;
-  color: #d3dae2;
-  opacity: 0.5;
-}
-.movieInfoBox .leftColumn .extraInfo .listInfo {
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  margin-bottom: 2rem;
-}
-.movieInfoBox .rightColumn {
+.mediaWrapper .movieInfoBox .rightColumn {
   width: calc(60% - 2rem);
 }
-.movieInfoBox .rightColumn .rightTitle {
+.mediaWrapper .movieInfoBox .rightColumn .rightTitle {
   font-size: 2.5rem;
   padding: 2rem 0;
 }
-.movieInfoBox .rightColumn .descriptionContainer p {
+.mediaWrapper .movieInfoBox .rightColumn .descriptionContainer p {
   font-size: 1.25rem;
   line-height: 1.5;
 }
 
+/*.movieInfoBox {
+   grid-row-start: 2;
+   display: flex;
+   gap: 2rem;
+   height: 520px;
+
+
+   .rightColumn {
+      width: calc(60% - 2rem);
+
+      .rightTitle {
+         font-size: 2.5rem;
+         padding: 2rem 0;
+      }
+
+      .descriptionContainer {
+         p {
+            font-size: 1.25rem;
+
+            line-height: 1.5;
+         }
+      }
+   }
+}*/
 .topTitle {
   place-self: center;
   font-family: sans-serif;
@@ -412,6 +408,7 @@ footer .footerPrivacyPolicyLink {
 
 .movieBtn {
   max-width: fit-content;
+  text-decoration: none;
   place-self: end;
   padding: 10px;
   margin: 10px;

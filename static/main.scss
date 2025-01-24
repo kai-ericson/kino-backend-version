@@ -1,8 +1,6 @@
-//@use "moviesPage.scss" as *;
 $backgroundColor: #0e0e1b;
 $buttonColor: #175dcc;
 $textColor: #ffffff;
-//@use "normalize";
 
 * {
    margin: 0px;
@@ -72,6 +70,12 @@ header {
    }
 
 }
+
+   .picUnderNav{
+      width: 100%;
+      object-fit: cover;
+      align-self: center;
+   }
 
 * {
    margin: 0px;

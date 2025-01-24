@@ -7,11 +7,11 @@
 }
 
 body {
-  background-color: #0e0e1b;
+  background-color: #bc1194;
 }
 
 header {
-  background-color: #0e0e1b;
+  background-color: #bc1194;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -61,6 +61,12 @@ header .searchBar .searchBtn {
   cursor: pointer;
 }
 
+.cinemaSeats .picUnderNav {
+  width: 100%;
+  object-fit: cover;
+  align-self: center;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -68,7 +74,7 @@ header .searchBar .searchBtn {
 }
 
 .skiReviewerSection {
-  background-color: #0e0e1b;
+  background-color: #bc1194;
   width: 100vw;
   display: flex;
   padding-top: 30px;
@@ -310,7 +316,7 @@ header .searchBar .searchBtn {
 }
 
 footer {
-  background-color: #0e0e1b;
+  background-color: #bc1194;
   font-size: 1.5rem;
   height: 100%;
   width: 100%;
@@ -382,7 +388,6 @@ footer .footerPrivacyPolicyLink {
   overflow: hidden;
   width: 300px;
   transition: transform 0.2s, box-shadow 0.2s;
-  object-fit: contain;
 }
 
 .movieWrapper:hover {
