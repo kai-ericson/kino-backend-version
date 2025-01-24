@@ -24,9 +24,16 @@
             </map>
          <div class="navContainer">
             <nav class="headerNav">
-               {{#each menuItems}}
-                  <a href="{{this-link}}" class="headerNavItem">{{this.label}} </a>
-               {{/each}}
+                 <a href="/allMovies" class="headerNavItem">
+                  See all movies</a
+               >
+               <a href="/events" class="headerNavItem">Events</a>
+               <a href="#" class="headerNavItem">Link</a>
+               <a href="#" class="headerNavItem">Link</a>
+               <a href="#" class="headerNavItem">Link</a>
+               <a href="#" class="headerNavItem">Link</a>
+               <a href="#" class="headerNavItem">Link</a>
+               <a href="#" class="headerNavItem">Link</a>
             </nav>
             <div class="searchBar">
                <input
@@ -40,12 +47,16 @@
     <div class="main">
         {{{body}}}
     </div>
-      
       <footer>
          <nav>
-            {{#each navItems}}
-            <a class="footerNav {{this.class}}" href="{{this.link}}">{{this.label}}</a>
-            {{/each}}
+            <a href="#" class="footerNav footerAboutUsLink">Om oss</a>
+            <a href="#" class="footerNav footerAllMoviesLink">Alla filmer</a>
+            <a href="#" class="footerNav footerInstagramLink">Instagram</a>
+            <a href="#" class="footerNav footerFacebookLink">Facebook</a>
+            <a href="#" class="footerNav footerXLink">X</a>
+            <a href="#" class="footerNav footerTosLink">ToS</a>
+            <a href="#" class="footerNav footerPrivacyPolicyLink"
+               >Privacy policy</a>
          </nav>
       </footer>
    </body>
