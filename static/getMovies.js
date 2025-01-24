@@ -5,7 +5,6 @@ export async function getMovies(){
     const response = await fetch(apiBase + "/movies");
     const payload = await response.json();
     const movies = payload.data.map(toMovieObject);
-    console.log(movies);
     return movies;
 }
 
