@@ -8,9 +8,11 @@
     "lib": "lib"
   },
   "scripts": {
+    "start": "node index.js",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
     "sass:watch": "sass --watch static/main.scss static/main.css",
     "sass:compile": "sass static/main.scss static/main.cc"
+    
   },
   "author": "",
   "license": "ISC",
