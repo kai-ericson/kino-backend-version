@@ -382,6 +382,7 @@ footer .footerPrivacyPolicyLink {
   overflow: hidden;
   width: 300px;
   transition: transform 0.2s, box-shadow 0.2s;
+  object-fit: contain;
 }
 
 .movieWrapper:hover {

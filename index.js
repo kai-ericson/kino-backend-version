@@ -1,3 +1,4 @@
-import app from "./lib/app.js"
+import app from "./src/app.js"
+
 app.listen(5080);
 
